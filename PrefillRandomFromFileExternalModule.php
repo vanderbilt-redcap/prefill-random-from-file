@@ -48,7 +48,6 @@ class PrefillRandomFromFileExternalModule extends AbstractExternalModule
                 } while (in_array($chosenLine,$chosenLines) && $loopCount < 200);
                 $chosenLines[$i] = $chosenLine;
                 unset($randomSentenceLine[$randIndex]);
-                echo "Chosen Line: ".json_encode($chosenLine)."<br/>";
                 $calcText .= "$(\"[name='".$prefillFields[$i]."']\").val('".json_encode($chosenLine,JSON_HEX_APOS)."').blur();";
             }
             $calcText .= "});
