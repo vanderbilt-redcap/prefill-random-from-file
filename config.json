@@ -1,0 +1,45 @@
+{
+  "name": "Prefill Field with Random Values from File",
+
+  "namespace": "Vanderbilt\\PrefillRandomFromFileExternalModule",
+
+  "authors": [
+    {
+      "name": "Ryan Moore",
+      "email": "datacore@vumc.org",
+      "institution": "Vanderbilt University Medical Center"
+    }
+  ],
+
+  "description": "Module that will prefill values into fields based on random values from a file. Currently not for radio or checkbox fields.",
+
+  "framework-version": 2,
+
+  "permissions": [
+    "select_data",
+    "redcap_survey_page",
+    "redcap_data_entry_form"
+  ],
+
+  "project-settings": [
+    {
+      "key": "values-file",
+      "name": "File with Values to Prefill (csv file format)",
+      "type":"file",
+      "required": true,
+      "repeatable": false
+    },
+    {
+      "key": "survey-view",
+      "name": "Prefill Fields Only When Viewed as Survey",
+      "type":"checkbox",
+      "required": true
+    },
+    {
+      "key": "prefill-fields",
+      "name": "Field to Prefill",
+      "type": "field-list",
+      "repeatable": true
+    }
+  ]
+}
